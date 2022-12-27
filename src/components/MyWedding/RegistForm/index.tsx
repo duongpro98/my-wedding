@@ -2,12 +2,15 @@ import React, {useLayoutEffect, useState} from "react";
 import {FormContainer, Title, Description, FieldWrapper, TextArea, TextContainer, Text, SubmitButton, Footer} from "./StyledRegisterForm";
 import InputText from "../../../utils/InputText";
 import {Grid} from "@mui/material";
-import {listImages} from "../dictionary";
-import {ImageAlbum} from "../StyledMyWedding";
+import {database} from "../../../db/firebase";
+import {addDoc, collection} from "firebase/firestore";
 
 const RegisterForm:React.FC = () => {
-    const [value1, setValue1] = useState("");
+    const [email, setEmail] = useState("");
+    const [name, setName] = useState("");
+    const [note, setNote] = useState("");
     const [err, setErr] = useState("");
+    const userCollection = collection(database, "users");
 
     const handleViewPort = () => {
         if(window.innerWidth <= 599){
@@ -17,8 +20,14 @@ const RegisterForm:React.FC = () => {
     }
 
     const [isExtraSmall, setIsExtraSmall] = useState(handleViewPort());
-    const handleChange = (value: string) => {
-        setValue1(value)
+    const handleChange = (value: string, type: string) => {
+        if(type === "email"){
+            setEmail(value)
+        }else if(type === "name"){
+            setName(value)
+        }else {
+            setNote(value)
+        }
     }
 
     useLayoutEffect(() => {
@@ -26,6 +35,20 @@ const RegisterForm:React.FC = () => {
             setIsExtraSmall(handleViewPort());
         });
     })
+
+    const handleSubmit = async () => {
+        try{
+            await addDoc(userCollection, {
+                email: email,
+                name: name,
+                note: note
+            });
+            console.log("Submit successfully");
+        }
+        catch (err){
+            console.log(err);
+        }
+    }
 
     return (
         <FormContainer>
@@ -40,8 +63,8 @@ const RegisterForm:React.FC = () => {
                                 <Text>Email</Text>
                                 <InputText
                                     id={"id"}
-                                    value={value1}
-                                    onChange={(e) => handleChange(e.target?.value)}
+                                    value={email}
+                                    onChange={(e) => handleChange(e.target?.value, "email")}
                                     errorMsg={err}
                                     placeHolder={"Email"}
                                 />
@@ -50,20 +73,25 @@ const RegisterForm:React.FC = () => {
                                 <Text>Họ và tên</Text>
                                 <InputText
                                     id={"id"}
-                                    value={value1}
-                                    onChange={(e) => handleChange(e.target?.value)}
+                                    value={name}
+                                    onChange={(e) => handleChange(e.target?.value, "name")}
                                     errorMsg={err}
                                     placeHolder={"Họ và tên"}
                                 />
                             </TextContainer>
-                            {!isExtraSmall && (<SubmitButton>Gửi lời chúc</SubmitButton>)}
+                            {!isExtraSmall && (<SubmitButton onClick={() => handleSubmit()}>Gửi lời chúc</SubmitButton>)}
                         </div>
                         {/*</TextContainer>*/}
                     </Grid>
                     <Grid item xs={12} sm={6} md={6}>
                         {/*<TextArea>*/}
-                        <TextArea placeholder={"Hello"}/>
-                        {isExtraSmall && (<SubmitButton>Gửi lời chúc</SubmitButton>)}
+                        <TextArea
+                            id={"area"}
+                            value={note}
+                            onChange={(e) => handleChange(e.target?.value, "note")}
+                            placeholder={"Hello"}
+                        />
+                        {isExtraSmall && (<SubmitButton onClick={() => handleSubmit()}>Gửi lời chúc</SubmitButton>)}
                     </Grid>
                 </Grid>
             </FieldWrapper>
