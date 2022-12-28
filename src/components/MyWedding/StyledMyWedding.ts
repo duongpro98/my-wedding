@@ -1,5 +1,5 @@
 import styled, {css} from "styled-components";
-import {mq} from "../../utils/styles";
+import {heading_l, heading_xl, heading_xxl, mq} from "../../utils/styles";
 
 
 export const Container = styled.div`
@@ -87,15 +87,21 @@ export const BigHeader = styled.div`
 `
 
 export const Header = styled.div`
-    color: white;
-    font-style: italic;
-    font-size: 39px;
-    font-weight: bold;
+    width: 100%;
     margin-bottom: 50px;
     display: flex;
     align-items: center;
+    justify-content: center;
     & svg{
        margin: 0px 10px;
+    }
+`
+
+export const HeaderText = styled.div`
+    color: white;
+    ${heading_xl}
+    ${mq.between('sm', 'md')}{
+       ${heading_xxl}
     }
 `
 

@@ -8,7 +8,7 @@ function headingStyle(settings: IFontSetting) {
     font-size: ${settings.fontSize.sm}px;
     line-height: ${settings.lineHeight.sm}px;
     font-weight: ${settings.fontWeight || 'bold'};
-    font-family: ${settings.fontFamily};
+    font-family: 'Dancing Script', cursive;
     ${spacing({ theme, my: 0 })}
   
     ${mq('md')} {

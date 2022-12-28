@@ -7,7 +7,8 @@ import {
     Notice,
     Timer,
     TimerNumber,
-    TimerText
+    TimerText,
+    HeaderText
 } from "../StyledMyWedding";
 import SvgHeart from "../../../utils/icons/Heart";
 
@@ -47,7 +48,11 @@ const Heading: React.FC = () => {
     return(
         <ContainerHeader>
             <BigHeader>SAVE THE DATE</BigHeader>
-            <Header>Xuân Dương <SvgHeart/> Gia Hân</Header>
+            <Header>
+                <HeaderText>Xuân Dương</HeaderText>
+                <SvgHeart/>
+                <HeaderText>Gia Hân</HeaderText>
+            </Header>
             <Notice>11 February 2023</Notice>
             <CountdownWrapper>
                 <Timer>
