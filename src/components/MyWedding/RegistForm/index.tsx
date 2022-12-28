@@ -36,7 +36,7 @@ const RegisterForm:React.FC = () => {
         note: ""
     });
     const [disabled, setDisabled] = useState(false);
-    const userCollection = collection(database, "users");
+    const userCollection = collection(database, "wishes");
 
     const handleViewPort = () => {
         if(window.innerWidth <= 599){

@@ -115,6 +115,7 @@ dist
 
 # production
 .idea
+/build
 # misc
 .DS_Store
 .env.local
