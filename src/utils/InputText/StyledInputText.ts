@@ -29,8 +29,9 @@ export const Wrapper = styled.div`
     margin-top: 2px;
     display: flex;
     align-items: center;
+    color: #B00020;
     & svg {
-       ${({ theme }) => spacing({ theme, mr: 1 })};
+       margin-right: 6px;
     }
   }
   

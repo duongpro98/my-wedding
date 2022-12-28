@@ -51,9 +51,6 @@ export const Timer = styled.div`
   justify-content: center;
   transition: border 0.5s;
   flex-wrap: wrap;
-  &:hover{
-    border: 2px solid #753a88;
-  }
   ${mq.lessThan('md')}{
     width: 80px;
     height: 80px;
@@ -108,8 +105,15 @@ export const HeaderText = styled.div`
 export const Notice = styled.div`
     color: white;
     font-size: 26px;
-    font-style: italic;
 `
+
+export const NoticeBold = styled.div`
+    color: white;
+    font-size: 22px;
+    margin-top: 20px;
+    font-family: 'Quicksand', sans-serif;
+`
+
 export const ComponentsWrapper = styled.div`
    width: 100%;
    background: #F2EDED;
@@ -186,7 +190,6 @@ export const Image = css`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  cursor: pointer;
 `
 
 export const ImageDefault = styled.img`
@@ -197,10 +200,6 @@ export const ImageAvatar = styled.img`
   ${Image}
   border: 3px solid #ffafbd;
   padding: 3px;
-  &:hover{
-     border: 3px solid red;
-     transition: border-width 0.1s ease-in;
-  }
 `
 
 export const ImageFlower = styled.img`
@@ -209,6 +208,7 @@ export const ImageFlower = styled.img`
 
 export const ImageAlbum = styled.img`
   ${Image}
+  cursor: pointer;
   transition: transform 0.5s;
   overflow: hidden;
   &:hover{

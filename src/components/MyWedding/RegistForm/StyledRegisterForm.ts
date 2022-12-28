@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {heading_m, heading_xxl, text_l, text_m, text_s} from "../../../utils/styles";
 import {mq} from "../../../utils/styles";
+import {spacing} from "../../../utils/props";
 
 export const FormContainer = styled.div`
   width: 100%;
@@ -34,18 +35,47 @@ export const Description = styled.div`
   color: white;
 `
 
+export const Notice = styled.div<any>`
+  ${text_l}
+  font-family: 'Dancing Script', cursive;
+  margin-top: 20px;
+  color: ${props => props.isSuccess ? '#ef629f': '#eb3349'};
+`
+
 export const FieldWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 90%;
   margin-top: 30px;
+  
+  .error-note {
+    ${text_s}
+    margin: 0;
+    padding-left: 5px;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    color: #B00020;
+    & svg {
+       margin-right: 6px;
+    }
+  }
+`
+
+export const TextAreaContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  ${mq.lessThan('sm')}{
+    align-items: center;
+  }
 `
 
 export const TextArea = styled.textarea`
   font-size: 20px;
   min-height: 220px;
-  width: 70%;
+  width: 80%;
   &:focus-visible {
     outline: 2px solid #8CA0FF;
   }
@@ -58,8 +88,12 @@ export const TextArea = styled.textarea`
     background: #f0f1f2;
     border: 1px solid #dddee1;
   }
+  ${mq.lessThan('xl')}{
+    width: 100%;
+  }
   ${mq.lessThan('sm')}{
     margin-top: 30px;
+    width: 70%;
   }
 `
 
@@ -88,6 +122,10 @@ export const SubmitButton = styled.button`
   margin-top: 30px;
   &:hover{
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) transparent;
+  }
+  &:disabled {
+    background:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) #ffafbd;
+    opacity: 0.3;
   }
   ${mq.lessThan('md')}{
     width: 150px;

@@ -5,6 +5,7 @@ import {
     CountdownWrapper,
     Header,
     Notice,
+    NoticeBold,
     Timer,
     TimerNumber,
     TimerText,
@@ -54,6 +55,8 @@ const Heading: React.FC = () => {
                 <HeaderText>Gia Hân</HeaderText>
             </Header>
             <Notice>11 February 2023</Notice>
+            <NoticeBold>TRUNG TÂM TIỆC CƯỚI LONG VĨ</NoticeBold>
+
             <CountdownWrapper>
                 <Timer>
                     <TimerNumber>{day}</TimerNumber>
