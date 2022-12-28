@@ -10,6 +10,8 @@ export const Container = styled.div`
    background: #F2EDED;
    position: relative;
    font-family: 'Dancing Script', cursive;
+   max-width: 100%;
+   overflow-x: hidden;
 `
 
 export const ContainerHeader = styled.div`
