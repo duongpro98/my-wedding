@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 import {
-    heading_s,
-    heading_xl,
     mq,
     svg,
-    text_s
 } from '../../../utils/styles';
 import { spacing } from "../../../utils/props";
 import { NavLink } from 'react-router-dom';

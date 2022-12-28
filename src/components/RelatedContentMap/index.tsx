@@ -22,8 +22,6 @@ import SvgGoogleCrossHair from "../../utils/icons/Map/GoogleCrosshair";
 import SvgZoomIn from "../../utils/icons/Map/ZoomIn";
 import SvgZoomOut from "../../utils/icons/Map/ZoomOut";
 import {
-    logoIcon,
-    activeLogoIcon,
     zoomTypes,
     mapProps,
     viewports, mapItemProps

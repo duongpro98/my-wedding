@@ -7,22 +7,12 @@ import {
     HeaderWrapper
 } from "./StyledInfo";
 import {Grid} from "@mui/material";
-import { imagePlaceholderSrc } from "../../../utils/styles";
-import {
-    convertSrcJss,
-    createSrcSet
-} from "../../../utils/media";
 import Arrow from "../../../utils/icons/Arrow";
-import NavLink from "../../NavItem";
 import {
-    ArrowBannerWrapper,
-    LinkIconBannerContainer,
-    TitleBanner,
-    TitleIconWrapper
+    TitleBanner
 } from "./StyledInfo";
 import {
-    getLink,
-    isValidLinkObject
+    getLink
 } from "../../../utils/helpers/link";
 import Pin from "../../../utils/icons/Pin";
 
@@ -41,7 +31,6 @@ const Info:React.FC<infoProps> = ({ item }) => {
     });
 
     const linkObject = getLink(item.link);
-    console.log(linkObject)
 
     return (
         <Container>
@@ -53,18 +42,6 @@ const Info:React.FC<infoProps> = ({ item }) => {
                             draggable={false}
                             src={item?.image?.value?.src}
                             alt={item?.image?.value?.alt || ''}
-                            // dataSrc={convertSrcJss(item?.image?.value?.src) + '?mw=1200'}
-                            // dataSrcset={createSrcSet(item?.image?.value?.src, [640, 1200, 1600])}
-                            // field={
-                            //     {
-                            //         value: {
-                            //             src: imagePlaceholderSrc,
-                            //             alt: item?.image?.value?.alt || '',
-                            //             'data-src': convertSrcJss(item?.image?.value?.src) + '?mw=1200',
-                            //             'data-srcset': createSrcSet(item?.image?.value?.src, [640, 1200, 1600])
-                            //         }
-                            //     }
-                            // }
                         />
                     </Figure>
                 </Grid>
@@ -74,12 +51,10 @@ const Info:React.FC<infoProps> = ({ item }) => {
                         {item.title}
                     </TitleWrapper>
                     <HeaderWrapper>
-                        {/*<NavLink StyledLink={LinkIconBannerContainer} link={linkObject}>*/}
                             <TitleBanner href={linkObject.url} target={linkObject.target}>
                                 {item.description}
                                 <Arrow ariaHidden={true} />
                             </TitleBanner>
-                        {/*</NavLink>*/}
                     </HeaderWrapper>
                 </Grid>
             </Grid>

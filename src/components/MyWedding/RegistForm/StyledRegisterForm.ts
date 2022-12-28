@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import {heading_m, heading_xxl, text_l, text_m, text_s} from "../../../utils/styles";
+import {heading_xxl, text_l, text_s} from "../../../utils/styles";
 import {mq} from "../../../utils/styles";
-import {spacing} from "../../../utils/props";
 
 export const FormContainer = styled.div`
   width: 100%;

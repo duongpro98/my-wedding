@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {heading_l, heading_m} from "../../../utils/styles";
+import {heading_l} from "../../../utils/styles";
 import {mq} from "../../../utils/styles";
 
 export const Container = styled.div`

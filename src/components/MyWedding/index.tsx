@@ -1,7 +1,6 @@
-import React, {useEffect, useLayoutEffect, useState} from "react";
+import React, {useState} from "react";
 import {
     Container,
-    FormContainer,
     AddressWrapper,
 } from "./StyledMyWedding";
 import RelatedContentMap from "../RelatedContentMap";
