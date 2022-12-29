@@ -10,7 +10,12 @@ import {
     SubmitButton,
     Footer,
     Notice,
-    TextAreaContainer
+    TextAreaContainer,
+    ButtonWrapper,
+    ImageQR,
+    QRContainer,
+    QRComponent,
+    QRText
 } from "./StyledRegisterForm";
 import InputText from "../../../utils/InputText";
 import {Grid} from "@mui/material";
@@ -18,6 +23,8 @@ import {database} from "../../../db/firebase";
 import {addDoc, collection} from "firebase/firestore";
 import {checkProperties, handleCheckInput} from "../../../utils/helpers/validation/validateInput";
 import SvgWarning from "../../../utils/icons/Warning";
+import {LoadingButton} from "@mui/lab";
+import "./styles.css";
 
 const listErrors = {
     email: "Email chưa chính xác",
@@ -36,6 +43,8 @@ const RegisterForm:React.FC = () => {
         note: ""
     });
     const [disabled, setDisabled] = useState(false);
+    const [showQR, setShowQR] = useState(false);
+    const [loader, setLoader] = useState("loaded");
     const userCollection = collection(database, "wishes");
 
     const handleViewPort = () => {
@@ -92,7 +101,7 @@ const RegisterForm:React.FC = () => {
     const handleSubmit = async () => {
         const errors = triggerError();
         if(checkProperties(errors)){
-            setDisabled(true)
+            setDisabled(true);
             try{
                 await addDoc(userCollection, {
                     email: email,
@@ -102,20 +111,42 @@ const RegisterForm:React.FC = () => {
                 setEmail("");
                 setName("");
                 setNote("");
-                setThanks("Gửi thành công rùi");
+                setLoader("success");
+                // setThanks("Gửi thành công rùi");
             }
             catch (err){
-                setThanks("Có lỗi xảy ra, vui lòng thử lại sau")
+                // setThanks("Có lỗi xảy ra, vui lòng thử lại sau")
+                setLoader("error");
                 console.log(err);
             }
         }
     }
 
     useEffect(() => {
+        if(loader !== "loaded"){
+            if(loader === "success"){
+                setTimeout(() => {
+                    setThanks("Gửi thành công rùi");
+                    // setDisabled(false);
+                    setLoader("loaded");
+                }, 2000)
+            }
+            else {
+                setTimeout(() => {
+                    setThanks("Có lỗi xảy ra, vui lòng thử lại sau");
+                    // setDisabled(false);
+                    setLoader("loaded");
+                }, 2000)
+            }
+        }
+    }, [loader])
+
+    useEffect(() => {
         if(thanks !== ""){
             setTimeout(() => {
                 setThanks("");
                 setDisabled(false);
+                // setLoader(false);
             }, 2000)
         }
     }, [thanks])
@@ -124,14 +155,11 @@ const RegisterForm:React.FC = () => {
         <FormContainer>
             <Title>Lời chúc</Title>
             <Description>Mọi người yêu mến thì nhắn lời chúc vào đây nha</Description>
-            {thanks && (
-                <Notice isSuccess={thanks === "Gửi thành công rùi"}>{thanks}</Notice>
-            )}
             <FieldWrapper>
                 <Grid container spacing={6}>
                     <Grid item xs={12} sm={6} md={6}>
                         {/*<TextContainer>*/}
-                        <div style={{marginTop: 0}}>
+                        <div style={{marginTop: 0}} className={"button"}>
                             <TextContainer>
                                 <Text>Email</Text>
                                 <InputText
@@ -152,26 +180,64 @@ const RegisterForm:React.FC = () => {
                                     placeHolder={"Họ và tên"}
                                 />
                             </TextContainer>
-                            {!isExtraSmall && (<SubmitButton disabled={disabled} onClick={() => handleSubmit()}>Gửi lời chúc</SubmitButton>)}
+                            {!isExtraSmall && (
+                                <LoadingButton
+                                    loading={loader !== "loaded"}
+                                    className={"loading-button"}
+                                    disabled={disabled}
+                                    style={{
+                                        color: loader !== "loaded" ? 'transparent': '',
+                                        background: loader !== "loaded" ? '#ffafbd': ''
+                                    }}
+                                    onClick={() => handleSubmit()}
+                                >
+                                    Gửi lời chúc
+                                </LoadingButton>
+                            )}
                         </div>
                         {/*</TextContainer>*/}
                     </Grid>
                     {!isMedium && (<Grid item xs={12} sm={1} md={1}></Grid>)}
                     <Grid item xs={12} sm={5} md={5}>
                         {/*<TextArea>*/}
-                        <TextAreaContainer>
+                        <TextAreaContainer className={"button"}>
                             <TextArea
                                 id={"area"}
                                 value={note}
                                 onChange={(e) => handleChange(e.target?.value, "note")}
-                                placeholder={"Hello"}
+                                placeholder={"Lời chúc"}
                             />
                             {err.note && <p className="error-note"><SvgWarning/>{err.note}</p>}
-                            {isExtraSmall && (<SubmitButton onClick={() => handleSubmit()} disabled={disabled}>Gửi lời chúc</SubmitButton>)}
+                            {isExtraSmall && (
+                                <LoadingButton
+                                    loading={loader !== "loaded"}
+                                    className={"loading-button"}
+                                    disabled={disabled}
+                                    onClick={() => handleSubmit()}
+                                >
+                                    Gửi lời chúc
+                                </LoadingButton>
+                            )}
                         </TextAreaContainer>
                     </Grid>
                 </Grid>
             </FieldWrapper>
+            {thanks && (
+                <Notice isSuccess={thanks === "Gửi thành công rùi"}>{thanks}</Notice>
+            )}
+            <SubmitButton onClick={() => setShowQR(!showQR)}>
+                Mừng cưới
+            </SubmitButton>
+            <QRContainer className={`show-up ${!showQR? 'not-show-up': ''}`}>
+                <QRComponent>
+                    <ImageQR src={"/my-wedding/imgs/qr_code.jpg"}/>
+                    <QRText>Nhà trai</QRText>
+                </QRComponent>
+                <QRComponent>
+                    <ImageQR src={"/my-wedding/imgs/qr_code_wife.jpg"}/>
+                    <QRText>Nhà gái</QRText>
+                </QRComponent>
+            </QRContainer>
             <Footer>Thank you !</Footer>
         </FormContainer>
     )

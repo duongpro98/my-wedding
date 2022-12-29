@@ -1,0 +1,29 @@
+.button > .loading-button{
+    font-family: 'Dancing Script', cursive;
+    border-radius: 8px;
+    padding: 3px 16px;
+    border: none;
+    color: white;
+    background: #ffafbd;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 32px;
+    line-height: 36px;
+    text-transform: none;
+}
+
+@media screen and (max-width: 768px) {
+    .button > .loading-button{
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+
+.button > .loading-button:hover{
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) transparent;
+}
+
+.button > .loading-button:disabled{
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)) transparent;
+    color: black;
+}

@@ -1,16 +1,22 @@
-import styled from "styled-components";
-import {heading_xxl, text_l, text_s} from "../../../utils/styles";
+import styled, {css} from "styled-components";
+import {heading_l, heading_xxl, text_l, text_s} from "../../../utils/styles";
 import {mq} from "../../../utils/styles";
 
 export const FormContainer = styled.div`
   width: 100%;
   min-height: 600px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/my-wedding/imgs/anh_bia_2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+  .not-show-up{
+    height: 0px;
+    opacity: 0;
+    overflow: hidden;
+  }
 `
 
 export const Title = styled.div`
@@ -23,7 +29,7 @@ export const Title = styled.div`
 export const Footer = styled.div`
   ${heading_xxl}
   color: white;
-  margin: 20px 0px;
+  margin: 20px 0px 50px 0px;
   font-family: 'Dancing Script', cursive;
 `
 
@@ -35,10 +41,12 @@ export const Description = styled.div`
 `
 
 export const Notice = styled.div<any>`
-  ${text_l}
-  font-family: 'Dancing Script', cursive;
+  ${heading_l}
+  font-family: 'Quicksand', sans-serif;
   margin-top: 20px;
-  color: ${props => props.isSuccess ? '#ef629f': '#eb3349'};
+  text-transform: uppercase;
+  margin: 20px 0px 0px 0px;
+  color: ${props => props.isSuccess ? '#ffafbd': '#eb3349'};
 `
 
 export const FieldWrapper = styled.div`
@@ -91,7 +99,6 @@ export const TextArea = styled.textarea`
     width: 100%;
   }
   ${mq.lessThan('sm')}{
-    margin-top: 30px;
     width: 70%;
   }
 `
@@ -110,23 +117,70 @@ export const Text = styled.div`
 
 export const SubmitButton = styled.button`
   ${text_l}
+  display: flex;
   font-family: 'Dancing Script', cursive;
   border-radius: 8px;
-  padding: 3px;
+  padding: 3px 16px;
   border: none;
-  width: 200px;
   color: white;
   background: #ffafbd;
   cursor: pointer;
-  margin-top: 30px;
+  margin: 30px 0px 0px 0px;
   &:hover{
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) transparent;
   }
-  &:disabled {
-    background:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) #ffafbd;
-    opacity: 0.3;
+  
+  @media screen and (max-width: 843px) {
+    margin-left: 0px;
   }
+`
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width: 843px) {
+    flex-direction: column;
+  }
+`
+
+export const QRContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  height: 500px;
+  transition: height 0.3s, opacity 2s;
+  
   ${mq.lessThan('md')}{
-    width: 150px;
+    height: 400px;
   }
+  ${mq.lessThan('sm')}{
+    height: 820px;
+    flex-direction: column;
+  }
+`
+
+export const QRComponent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+export const QRText = styled.div`
+  ${text_l};
+  color: white;
+  font-family: 'Dancing Script', cursive;
+`
+
+export const ImageQR = styled.img`
+   width: 250px;
+   height: 400px;
+   object-fit: cover;
+   border-radius: 10px;
+   margin: 0px 20px 0px 10px;
+   
+   ${mq.lessThan('md')}{
+    width: 200px;
+    height: 350px;
+   }
 `
