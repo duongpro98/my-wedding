@@ -128,6 +128,7 @@ export const Components = styled.div`
     margin-top: 50px;
     margin-bottom: 50px;
     ${mq.lessThan('md')}{
+       margin-top: 20px;
        flex-direction: column;
     }
 `
