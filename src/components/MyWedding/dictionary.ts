@@ -1,50 +1,50 @@
 export const listImages = [
     {
         id: 1,
-        src: "https://drive.google.com/uc?export=view&id=1GgsjPV7D1V3eAjehucqVxSmg9DMtNXXq"
+        src: "/my-wedding/images/ab_1.jpg"
     },
     {
         id: 2,
-        src: "https://drive.google.com/uc?export=view&id=1ZRHSkAlqEGQo3X1jH3dt1EtF6XX_m6Mh"
+        src: "/my-wedding/images/ab_2.jpg"
     },
     {
         id: 3,
-        src: "https://drive.google.com/uc?export=view&id=15PUPm5X68pNYREgr6vlKFujID69ufd_x"
+        src: "/my-wedding/images/ab_3.jpg"
     },
     {
         id: 4,
-        src: "https://drive.google.com/uc?export=view&id=14nIVYJestq9MRxBsDSYQ7n6qp9M3Pjlt"
+        src: "/my-wedding/images/ab_4.jpg"
     },
     {
         id: 5,
-        src: "https://drive.google.com/uc?export=view&id=1nNRQt9kHC1FmyBcq_fFtWHT6gDhGEG4c"
+        src: "/my-wedding/images/ab_9.jpg"
     },
     {
         id: 6,
-        src: "https://drive.google.com/uc?export=view&id=1kHeej4QEtcdnnkED-iDCkMAHxCxTsBS0"
+        src: "/my-wedding/images/ab_6.jpg"
     },
     {
         id: 7,
-        src: "https://drive.google.com/uc?export=view&id=1MxHxFrrurbntKM1V0TlyVEJzfcOIlCec"
+        src: "/my-wedding/images/ab_7.jpg"
     },
     {
         id: 8,
-        src: "https://drive.google.com/uc?export=view&id=1_mP3eEtCK8yCZA2BUE55hZ6z73XNqVjl"
+        src: "/my-wedding/images/ab_8.jpg"
     },
     {
         id: 9,
-        src: "https://drive.google.com/uc?export=view&id=1Bvlb2kfgtqwpR3BS6Sa5gVu8_4RtwQjp"
+        src: "/my-wedding/images/ab_5.jpg"
     },
     {
         id: 10,
-        src: "https://drive.google.com/uc?export=view&id=1Vl8jfDK8p4ye90YUJ9k7nTuwJarkJesq"
+        src: "/my-wedding/images/ab_10.jpg"
     },
     {
         id: 11,
-        src: "https://drive.google.com/uc?export=view&id=13yMZX5yNuSv2hlO4K8TWmdxCAZztjEdr"
+        src: "/my-wedding/images/ab_11.jpg"
     },
     {
         id: 12,
-        src: "https://drive.google.com/uc?export=view&id=1TpI4_LtJLgLwVAhonX78WrQmi8Esy717"
+        src: "/my-wedding/images/ab_12.jpg"
     },
 ]

@@ -45,7 +45,7 @@ const RegisterForm:React.FC = () => {
     const [disabled, setDisabled] = useState(false);
     const [showQR, setShowQR] = useState(false);
     const [loader, setLoader] = useState("loaded");
-    const userCollection = collection(database, "wishes");
+    const userCollection = collection(database, "best-wishes");
 
     const handleViewPort = () => {
         if(window.innerWidth <= 599){
@@ -230,11 +230,11 @@ const RegisterForm:React.FC = () => {
             </SubmitButton>
             <QRContainer className={!showQR? 'not-show-up': ''}>
                 <QRComponent>
-                    <ImageQR src={"https://drive.google.com/uc?export=view&id=1UbJ0cNLDDxjXuJoBRdCLADL48Wh2gT_I"}/>
+                    <ImageQR src={"/my-wedding/images/qr_code.jpg"}/>
                     <QRText>Nhà trai</QRText>
                 </QRComponent>
                 <QRComponent>
-                    <ImageQR src={"https://drive.google.com/uc?export=view&id=18JgvDixcjkXQdQscK3Hutz_QJpyh_fhO"}/>
+                    <ImageQR src={"/my-wedding/images/qr_code_wife.jpg"}/>
                     <QRText>Nhà gái</QRText>
                 </QRComponent>
             </QRContainer>

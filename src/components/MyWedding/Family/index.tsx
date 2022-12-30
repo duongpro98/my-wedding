@@ -13,14 +13,14 @@ const Family: React.FC = () => {
         <Container>
             <Header>
                 <HeaderText>Thành viên thứ ba của gia đình</HeaderText>
-                <Image src={"https://drive.google.com/uc?export=view&id=1YhgMd_xoDVlqE_ItsgRuuQNvSftxM_xu"}/>
+                <Image src={"/my-wedding/images/family.jpg"}/>
                 <ImageAvatar
                     id={"imagecolumn"}
-                    src={"https://drive.google.com/uc?export=view&id=1KEVNOdGZUYcDA-skgioMH5oQXUnEV5rP"}
+                    src={"/my-wedding/images/avatar_chin_cha.jpg"}
                 />
             </Header>
             <ImageTest
-                src={"https://drive.google.com/uc?export=view&id=14i9qWYDZTABSoWb_qwe8FgPgZ16wFLQh"}
+                src={"/my-wedding/images/chin_cha_yeu.jpg"}
             />
         </Container>
     )
