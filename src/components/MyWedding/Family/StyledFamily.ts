@@ -63,7 +63,8 @@ export const ImageContainer = styled.div`
 `
 
 export const ImageTest = styled.img`
-   width: 100%;
-   object-fit: cover;
-   max-height: 600px;
+   min-width: auto;
+   object-fit: contain;
+   max-height: 900px;
+   border-radius: 10px;
 `

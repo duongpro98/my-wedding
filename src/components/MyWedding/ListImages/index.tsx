@@ -60,12 +60,12 @@ const ListImages:React.FC<listImageProps> = ({ handleShowImage, handleCurrentIma
             <AlbumDescription>Mọi người cùng xem ảnh của hai chúng mình nhé</AlbumDescription>
             <Grid container spacing={2}>
                 {
-                    handleComplexImage(listImages, size).map((images) => (
-                        <Grid item xs={12} sm={6} md={4}>
+                    handleComplexImage(listImages, size).map((images, idx) => (
+                        <Grid item xs={12} sm={6} md={4} key={idx}>
                             <Grid container spacing={2}>
                                 {
                                     images.map((img: any) => (
-                                        <Grid item xs={12} sm={12} md={12}>
+                                        <Grid item xs={12} sm={12} md={12} key={img.id}>
                                             <ImageAlbum
                                                 onClick={() => handleClickShowUp(img.id)}
                                                 src={img.src}

@@ -208,9 +208,11 @@ export const ImageFlower = styled.img`
 
 export const ImageAlbum = styled.img`
   ${Image}
+  min-height: 397px;
   cursor: pointer;
   transition: transform 0.5s;
   overflow: hidden;
+  border-radius: 6px;
   &:hover{
     transform: scale(0.9);
   }
@@ -276,6 +278,9 @@ export const ImageShowUp = styled.div`
       ${mq.lessThan('md')}{
         width: 90%;
       }
+      ${mq.lessThan('sm')}{
+        width: 100%;
+      }
       
     }
     
@@ -330,13 +335,27 @@ export const CloseButton = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 39px;
+    height: 39px;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)) transparent;
+    border-radius: 8px;
     position: fixed;
     cursor: pointer;
     top: 5%;
     left: 96%;
     transform: translate(-50%, -50%);
     & svg{
-      min-width: 32px;
+      fill: white;
+      max-width: 28px;
+    }
+    &:hover{
+      background: white;
+      & svg {
+        min-width: 38px;
+        fill: black;
+        transition: min-width 0.2s;
+      }
+      transition: background-color 1s;
     }
     z-index: 4;
 `

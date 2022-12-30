@@ -23,7 +23,7 @@ const ListComponents:React.FC = () => {
             <Component height={height}>
                 <ImageAvatar
                     id="imagecolumn"
-                    src="https://images.unsplash.com/photo-1670766167104-f8c0d4561708?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                    src="/my-wedding/imgs/avatar_husband.jpg"
                 />
                 <Content>
                     <Name>Đỗ Xuân Dương</Name>
@@ -40,7 +40,7 @@ const ListComponents:React.FC = () => {
             <Component height={height}>
                 <ImageAvatar
                     id="imagecolumn"
-                    src="https://images.unsplash.com/photo-1670766167104-f8c0d4561708?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"/>
+                    src="/my-wedding/imgs/avatar_wife.jpg"/>
                 <Content>
                     <Name>Nguyễn Gia Hân</Name>
                     <Birthday>19/05/1998</Birthday>

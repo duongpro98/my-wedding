@@ -228,7 +228,7 @@ const RegisterForm:React.FC = () => {
             <SubmitButton onClick={() => setShowQR(!showQR)}>
                 Mừng cưới
             </SubmitButton>
-            <QRContainer className={`show-up ${!showQR? 'not-show-up': ''}`}>
+            <QRContainer className={!showQR? 'not-show-up': ''}>
                 <QRComponent>
                     <ImageQR src={"/my-wedding/imgs/qr_code.jpg"}/>
                     <QRText>Nhà trai</QRText>

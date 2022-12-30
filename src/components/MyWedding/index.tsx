@@ -33,10 +33,12 @@ const MyWedding:React.FC = () => {
                 loadSnowfall && (
                     <Snowfall
                         style={{ zIndex: 3 }}
-                        snowflakeCount={68}
+                        snowflakeCount={16}
                         images={images}
                         radius={[20, 30]}
                         speed={[5, 5]}
+                        rotationSpeed={[1, 3]}
+                        changeFrequency={100}
                     />
                 )
             }

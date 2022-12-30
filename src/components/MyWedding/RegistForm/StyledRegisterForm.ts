@@ -13,7 +13,7 @@ export const FormContainer = styled.div`
   align-items: center;
   
   .not-show-up{
-    height: 0px;
+    max-height: 0px;
     opacity: 0;
     overflow: hidden;
   }
@@ -145,17 +145,17 @@ export const ButtonWrapper = styled.div`
 `
 
 export const QRContainer = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   margin-top: 30px;
-  height: 500px;
-  transition: height 0.3s, opacity 2s;
-  
+  max-height: 500px;
+  transition: max-height 0.3s, opacity 2s;
   ${mq.lessThan('md')}{
-    height: 400px;
+    max-height: 400px;
   }
   ${mq.lessThan('sm')}{
-    height: 820px;
+    max-height: 820px;
     flex-direction: column;
   }
 `
@@ -170,6 +170,9 @@ export const QRText = styled.div`
   ${text_l};
   color: white;
   font-family: 'Dancing Script', cursive;
+  ${mq.lessThan('md')}{
+    font-size: 26px;
+  }
 `
 
 export const ImageQR = styled.img`
