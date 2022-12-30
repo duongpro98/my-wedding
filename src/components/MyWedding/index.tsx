@@ -16,19 +16,30 @@ import Snowfall from "react-snowfall";
 const MyWedding:React.FC = () => {
     const [showImage, setShowImage] = useState(false);
     const [currentImage, setCurrentImage] = useState(0);
+    const [loadSnowfall, setLoadSnowfall] = useState(false);
     const heart = document.createElement('img');
     heart.src = '/my-wedding/imgs/heart.jpg';
     const images = [heart];
 
+    useEffect(() => {
+        setTimeout(() => {
+            setLoadSnowfall(true);
+        }, 500);
+    }, [])
+
     return(
         <Container id={"container"}>
-            <Snowfall
-                style={{ zIndex: 3 }}
-                snowflakeCount={68}
-                images={images}
-                radius={[20, 30]}
-                speed={[5, 5]}
-            />
+            {
+                loadSnowfall && (
+                    <Snowfall
+                        style={{ zIndex: 3 }}
+                        snowflakeCount={68}
+                        images={images}
+                        radius={[20, 30]}
+                        speed={[5, 5]}
+                    />
+                )
+            }
             <ShowImage currentImage={currentImage} show={showImage} handleShow={setShowImage} handleCurrent={setCurrentImage}/>
             <Heading/>
             <ListComponents/>
