@@ -89,7 +89,8 @@ export const TextArea = styled.textarea`
   padding: 10px;
   border: 1px solid #DDDEE1;
   background: #F9F9F9;
-  border: 10px solid transparent;
+  border-style: solid;
+  border-width: 10px;
   border-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEXWrR06-KNf6LAfRrkEEKdtuwDbI2mZQodGzBfhIYyePSpQzMKCWdPssXZqPooRcbWhU&usqp=CAU") 36 round;
   &:disabled {
     background: #f0f1f2;
