@@ -230,11 +230,11 @@ const RegisterForm:React.FC = () => {
             </SubmitButton>
             <QRContainer className={!showQR? 'not-show-up': ''}>
                 <QRComponent>
-                    <ImageQR src={"/my-wedding/imgs/qr_code.jpg"}/>
+                    <ImageQR src={"https://drive.google.com/uc?export=view&id=1UbJ0cNLDDxjXuJoBRdCLADL48Wh2gT_I"}/>
                     <QRText>Nhà trai</QRText>
                 </QRComponent>
                 <QRComponent>
-                    <ImageQR src={"/my-wedding/imgs/qr_code_wife.jpg"}/>
+                    <ImageQR src={"https://drive.google.com/uc?export=view&id=18JgvDixcjkXQdQscK3Hutz_QJpyh_fhO"}/>
                     <QRText>Nhà gái</QRText>
                 </QRComponent>
             </QRContainer>

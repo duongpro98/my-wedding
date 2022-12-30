@@ -17,7 +17,7 @@ export const Container = styled.div`
 export const ContainerHeader = styled.div`
   width: 100%;
   min-height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/my-wedding/imgs/anh_bia_1.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://drive.google.com/uc?export=view&id=10xktCu9r_hKaUYwtj1-aw47rgC-Uv-a2");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;

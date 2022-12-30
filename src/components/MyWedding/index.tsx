@@ -18,7 +18,7 @@ const MyWedding:React.FC = () => {
     const [currentImage, setCurrentImage] = useState(0);
     const [loadSnowfall, setLoadSnowfall] = useState(false);
     const heart = document.createElement('img');
-    heart.src = '/my-wedding/imgs/heart.jpg';
+    heart.src = 'https://drive.google.com/uc?export=view&id=14jwfa3EQyAf83ithDuDEUA5LYMzcc9PB';
     const images = [heart];
 
     useEffect(() => {
