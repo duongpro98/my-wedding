@@ -5,7 +5,7 @@ import {mq} from "../../../utils/styles";
 export const FormContainer = styled.div`
   width: 100%;
   min-height: 600px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/my-wedding/images/anh_2.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://my-chin-cha-wedding.s3.ap-southeast-1.amazonaws.com/anh_2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;

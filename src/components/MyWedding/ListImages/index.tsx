@@ -9,13 +9,15 @@ import {
 } from "../StyledMyWedding";
 import {Grid} from "@mui/material";
 import {listImages} from "../dictionary";
+import {Skeleton} from "@mui/material";
 
 interface listImageProps{
+    listLoaded: any,
     handleShowImage: any,
+    handleLoad: any,
     handleCurrentImage: any
 }
-const ListImages:React.FC<listImageProps> = ({ handleShowImage, handleCurrentImage }) => {
-
+const ListImages:React.FC<listImageProps> = ({ listLoaded, handleShowImage, handleCurrentImage, handleLoad }) => {
     const handleViewPort = () => {
         let sizeNumber;
         if(window.innerWidth < 900 && window.innerWidth >= 575){
@@ -68,8 +70,21 @@ const ListImages:React.FC<listImageProps> = ({ handleShowImage, handleCurrentIma
                                         <Grid item xs={12} sm={12} md={12} key={img.id}>
                                             <ImageAlbum
                                                 onClick={() => handleClickShowUp(img.id)}
+                                                onLoad={(e) => handleLoad(img.id)}
+                                                style={{
+                                                    display: !listLoaded.includes(img.id)? "none": ""
+                                                }}
                                                 src={img.src}
                                             />
+                                            {
+                                                !listLoaded.includes(img.id) && (
+                                                    <Skeleton variant="rectangular" height={397} style={{
+                                                        width: '100%',
+                                                        cursor: "pointer",
+                                                        borderRadius: 6
+                                                    }}/>
+                                                )
+                                            }
                                         </Grid>
                                     ))
                                 }

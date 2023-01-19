@@ -15,6 +15,7 @@ import Snowfall from "react-snowfall";
 
 const MyWedding:React.FC = () => {
     const [showImage, setShowImage] = useState(false);
+    const [listLoaded, setListLoaded] = useState([]);
     const [currentImage, setCurrentImage] = useState(0);
     const [loadSnowfall, setLoadSnowfall] = useState(false);
     const heart = document.createElement('img');
@@ -26,6 +27,12 @@ const MyWedding:React.FC = () => {
             setLoadSnowfall(true);
         }, 500);
     }, [])
+
+    const handleOnload = (id: any) => {
+        let loaded = listLoaded;
+        loaded.push(id);
+        setListLoaded([...loaded]);
+    }
 
     return(
         <Container id={"container"}>
@@ -44,9 +51,9 @@ const MyWedding:React.FC = () => {
             }
             <ShowImage currentImage={currentImage} show={showImage} handleShow={setShowImage} handleCurrent={setCurrentImage}/>
             <Heading/>
-            <ListComponents/>
-            <Family/>
-            <ListImages handleShowImage={setShowImage} handleCurrentImage={setCurrentImage}/>
+            <ListComponents listLoaded={listLoaded} handleLoad={handleOnload}/>
+            <Family listLoaded={listLoaded} handleLoad={handleOnload}/>
+            <ListImages listLoaded={listLoaded} handleLoad={handleOnload} handleShowImage={setShowImage} handleCurrentImage={setCurrentImage}/>
             <AddressWrapper>
                 <RelatedContentMap data={mockContentMap.fields.data}/>
             </AddressWrapper>

@@ -17,7 +17,7 @@ export const Container = styled.div`
 export const ContainerHeader = styled.div`
   width: 100%;
   min-height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/my-wedding/images/anh_1.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://my-chin-cha-wedding.s3.ap-southeast-1.amazonaws.com/anh_1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -166,7 +166,11 @@ export const Component = styled.div<any>`
     align-items: center;
     & img{
         border-radius: 50%;
-        height: ${(props: any) => props.height ? props.height + 'px' : ''}
+        height: ${(props: any) => props.height1 ? props.height1 + 'px' : ''}
+    }
+    & span.MuiSkeleton-root{
+        border-radius: 50%;
+        height: ${(props: any) => props.height2 ? props.height2 + 'px' : ''}
     }
     ${mq('xs')}{
         width: 80%;
