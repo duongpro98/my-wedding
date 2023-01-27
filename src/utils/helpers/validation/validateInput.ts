@@ -40,7 +40,7 @@ const checkSpecialCharacter = (value: string) => {
 export const handleCheckInput = (value: string, type: string) => {
     switch (type){
         case 'email':
-            if(!checkEmpty(value) && checkEmail(value)){
+            if(checkEmail(value) || value === ""){
                 return true;
             }
             break;
