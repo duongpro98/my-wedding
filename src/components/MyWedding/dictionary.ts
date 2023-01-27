@@ -5,7 +5,7 @@ export const listImages = [
     },
     {
         id: 2,
-        src: "/my-wedding/images/ab_2.jpg"
+        src: "/my-wedding/images/anh_pro_2.jpg"
     },
     {
         id: 3,
@@ -17,34 +17,22 @@ export const listImages = [
     },
     {
         id: 5,
-        src: "/my-wedding/images/ab_9.jpg"
+        src: "/my-wedding/images/anh_pro_6.jpg"
     },
     {
         id: 6,
-        src: "/my-wedding/images/ab_6.jpg"
+        src: "/my-wedding/images/anh_pro_7.jpg"
     },
     {
         id: 7,
-        src: "/my-wedding/images/ab_7.jpg"
-    },
-    {
-        id: 8,
-        src: "/my-wedding/images/ab_8.jpg"
-    },
-    {
-        id: 9,
         src: "/my-wedding/images/ab_5.jpg"
     },
     {
-        id: 10,
-        src: "/my-wedding/images/ab_10.jpg"
+        id: 8,
+        src: "/my-wedding/images/anh_pro_11.jpg"
     },
     {
-        id: 11,
-        src: "/my-wedding/images/ab_11.jpg"
-    },
-    {
-        id: 12,
-        src: "/my-wedding/images/ab_12.jpg"
+        id: 9,
+        src: "/my-wedding/images/anh_pro_12.jpg"
     },
 ]

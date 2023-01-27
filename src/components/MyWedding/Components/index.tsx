@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Components, Birthday, Component, Content, HeartWrapper, IconGroup, ImageAvatar, Name} from "../StyledMyWedding";
-import Facebook from "../../../utils/icons/Facebook";
-import Instagram from "../../../utils/icons/Instagram";
+import {Components, Birthday, Component, Content, HeartWrapper, ImageAvatar, Name} from "../StyledMyWedding";
 import Heart from "../../../utils/icons/Heart";
 import {Skeleton} from "@mui/material";
 
@@ -46,10 +44,6 @@ const ListComponents:React.FC<listComponentsProps> = ({ listLoaded, handleLoad }
                 <Content>
                     <Name>Đỗ Xuân Dương</Name>
                     <Birthday>11/08/1998</Birthday>
-                    <IconGroup>
-                        <Facebook/>
-                        <Instagram/>
-                    </IconGroup>
                 </Content>
             </Component>
             <HeartWrapper>
@@ -72,10 +66,6 @@ const ListComponents:React.FC<listComponentsProps> = ({ listLoaded, handleLoad }
                 <Content>
                     <Name>Nguyễn Gia Hân</Name>
                     <Birthday>19/05/1998</Birthday>
-                    <IconGroup>
-                        <Facebook/>
-                        <Instagram/>
-                    </IconGroup>
                 </Content>
             </Component>
         </Components>

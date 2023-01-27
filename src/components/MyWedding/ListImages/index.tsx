@@ -21,7 +21,7 @@ const ListImages:React.FC<listImageProps> = ({ listLoaded, handleShowImage, hand
     const handleViewPort = () => {
         let sizeNumber;
         if(window.innerWidth < 900 && window.innerWidth >= 575){
-            sizeNumber = 6;
+            sizeNumber = 5;
         }else {
             sizeNumber = 4;
         }

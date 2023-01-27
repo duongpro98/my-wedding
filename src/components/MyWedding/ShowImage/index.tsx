@@ -65,25 +65,25 @@ const ShowImage:React.FC<showImageProps> = ({show, currentImage, handleShow, han
                 <CloseButton onClick={() => handleClose()}>
                     <Close/>
                 </CloseButton>
-                <SlideButtonWrapper position={"left"} onClick={() => handleClickBack()}>
-                    <ArrowLeft></ArrowLeft>
-                </SlideButtonWrapper>
-                {
-                    listImages.map((image) => (
-                        <ImageDefault
-                            className={click.includes(image.id) ? animation(sideFade): ''}
-                            src={image.src}
-                        />
-                    ))
-                }
+                {/*<SlideButtonWrapper position={"left"} onClick={() => handleClickBack()}>*/}
+                {/*    <ArrowLeft></ArrowLeft>*/}
+                {/*</SlideButtonWrapper>*/}
+                {/*{*/}
+                {/*    listImages.map((image) => (*/}
+                {/*        <ImageDefault*/}
+                {/*            className={click.includes(image.id) ? animation(sideFade): ''}*/}
+                {/*            src={image.src}*/}
+                {/*        />*/}
+                {/*    ))*/}
+                {/*}*/}
                 <ImageDefault
                     // onClick={() => handleClick(image.id)}
-                    className={click.includes(currentImage) ? 'image-slide-left': ''}
+                    // className={click.includes(currentImage) ? 'image-slide-left': ''}
                     src={listImages[currentImage - 1].src}
                 />
-                <SlideButtonWrapper position={"right"} onClick={() => handleClickNext()}>
-                    <ArrowRight></ArrowRight>
-                </SlideButtonWrapper>
+                {/*<SlideButtonWrapper position={"right"} onClick={() => handleClickNext()}>*/}
+                {/*    <ArrowRight></ArrowRight>*/}
+                {/*</SlideButtonWrapper>*/}
             </ImageShowUp>
         )
     )

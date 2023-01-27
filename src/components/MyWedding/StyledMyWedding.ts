@@ -199,6 +199,7 @@ export const Image = css`
 
 export const ImageDefault = styled.img`
   ${Image}
+  // object-fit: contain;
 `
 
 export const ImageAvatar = styled.img`
@@ -241,22 +242,6 @@ export const Birthday = styled.div`
     color: black;
     font-style: italic;
     margin-top: 20px;
-`
-
-export const IconGroup = styled.div`
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    & svg{
-        margin: 10px;
-        width: 20px;
-        &:first-child{
-            width: 15px;
-        }
-        &:last-child{
-            min-width: 30px;
-        }
-    }
 `
 
 export const ImageShowUp = styled.div`
