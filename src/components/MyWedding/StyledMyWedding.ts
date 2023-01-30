@@ -28,6 +28,9 @@ export const ContainerHeader = styled.div`
   align-items: center;
   justify-content: center;
   padding: 24px;
+  ${mq.lessThan('sm')}{
+    background-attachment: scroll;
+  }
 `
 
 export const CountdownWrapper = styled.div`
@@ -110,7 +113,7 @@ export const Notice = styled.div`
 export const NoticeBold = styled.div`
     color: white;
     font-size: 22px;
-    margin-top: 20px;
+    margin-top: 30px;
     font-family: 'Quicksand', sans-serif;
 `
 

@@ -54,7 +54,8 @@ const Heading: React.FC = () => {
                 <SvgHeart/>
                 <HeaderText>Gia Hân</HeaderText>
             </Header>
-            <Notice>11 February 2023</Notice>
+            <Notice>Vào lúc 17h00</Notice>
+            <Notice>Ngày 11 tháng 2 năm 2023</Notice>
             <NoticeBold>TRUNG TÂM TIỆC CƯỚI LONG VĨ</NoticeBold>
 
             <CountdownWrapper>
