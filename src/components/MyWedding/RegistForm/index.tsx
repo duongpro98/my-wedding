@@ -12,6 +12,7 @@ import {
     Notice,
     TextAreaContainer,
     ButtonWrapper,
+    Optional,
     ImageQR,
     QRContainer,
     QRComponent,
@@ -161,7 +162,11 @@ const RegisterForm:React.FC = () => {
                         {/*<TextContainer>*/}
                         <div style={{marginTop: 0}} className={"button"}>
                             <TextContainer>
-                                <Text>Email</Text>
+                                <Text>
+                                    Email
+                                    &nbsp;
+                                    <Optional>(Không bắt buộc)</Optional>
+                                </Text>
                                 <InputText
                                     id={"id"}
                                     value={email}

@@ -114,6 +114,18 @@ export const Text = styled.div`
   font-family: 'Dancing Script', cursive;
   color: white;
   text-align: start;
+  display: flex;
+  align-items: center;
+`
+
+export const Optional = styled.p`
+  ${text_s}
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  margin-top: 8px;
+  ${mq.lessThan('md')}{
+    margin-top: 2px;
+  }
 `
 
 export const SubmitButton = styled.button`
