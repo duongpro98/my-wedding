@@ -14,7 +14,7 @@ import {
 import SvgHeart from "../../../utils/icons/Heart";
 
 const Heading: React.FC = () => {
-    const countDownDate = new Date("February 11, 2023 11:00:00").getTime();
+    const countDownDate = new Date("February 11, 2023 17:00:00").getTime();
     const [day, setDay] = useState<number>();
     const [hour, setHour] = useState<number>();
     const [minute, setMinute] = useState<number>();
