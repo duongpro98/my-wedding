@@ -118,16 +118,6 @@ export const Text = styled.div`
   align-items: center;
 `
 
-export const Optional = styled.p`
-  ${text_s}
-  font-family: 'Quicksand', sans-serif;
-  margin: 0;
-  margin-top: 8px;
-  ${mq.lessThan('md')}{
-    margin-top: 2px;
-  }
-`
-
 export const SubmitButton = styled.button`
   ${text_l}
   display: flex;

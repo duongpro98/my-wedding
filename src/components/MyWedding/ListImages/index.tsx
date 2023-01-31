@@ -23,7 +23,7 @@ const ListImages:React.FC<listImageProps> = ({ listLoaded, handleShowImage, hand
         if(window.innerWidth < 900 && window.innerWidth >= 575){
             sizeNumber = 5;
         }else {
-            sizeNumber = 4;
+            sizeNumber = 3;
         }
         return sizeNumber;
     }

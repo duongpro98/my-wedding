@@ -11,8 +11,6 @@ import {
     Footer,
     Notice,
     TextAreaContainer,
-    ButtonWrapper,
-    Optional,
     ImageQR,
     QRContainer,
     QRComponent,
@@ -164,8 +162,6 @@ const RegisterForm:React.FC = () => {
                             <TextContainer>
                                 <Text>
                                     Email
-                                    &nbsp;
-                                    <Optional>(Không bắt buộc)</Optional>
                                 </Text>
                                 <InputText
                                     id={"id"}
@@ -176,7 +172,7 @@ const RegisterForm:React.FC = () => {
                                 />
                             </TextContainer>
                             <TextContainer>
-                                <Text>Họ và tên</Text>
+                                <Text>Họ và tên*</Text>
                                 <InputText
                                     id={"id"}
                                     value={name}
@@ -210,7 +206,7 @@ const RegisterForm:React.FC = () => {
                                 id={"area"}
                                 value={note}
                                 onChange={(e) => handleChange(e.target?.value, "note")}
-                                placeholder={"Lời chúc"}
+                                placeholder={"Lời chúc*"}
                             />
                             {err.note && <p className="error-note"><SvgWarning/>{err.note}</p>}
                             {isExtraSmall && (
